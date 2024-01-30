@@ -29,14 +29,13 @@ android {
                 "proguard-rules.pro"
             )
             resValue("string", "robername", "Dummy App")
-            buildConfigField("String", "BASE_URL", "\"https://dummyjson.com/\"")
+            buildConfigField("String", "BASE_URL", "\"https://dummyjson.com\"")
         }
 
         getByName("debug") {
             isDebuggable = true
             resValue("string", "robername", "[DEBUG] Dummy App")
-            buildConfigField("String", "BASE_URL", "\"https://dummyjson.com/\"")
-//            buildConfigField("String", "BASE_URL", "\"https://newastro-debug.vercel.app/\"")  URL DEBUG
+            buildConfigField("String", "BASE_URL", "\"https://dummyjson.com\"")
         }
     }
     compileOptions {
@@ -50,14 +49,11 @@ android {
         viewBinding = true
         buildConfig = true
     }
-    kotlin {
-        jvmToolchain(8)
-    }
 }
 
 dependencies {
 
-    val navVersion = "2.7.2"
+    val navVersion = "2.7.6"
     val daggerVersion = "2.48"
     val retrofitVersion = "2.9.0"
 
@@ -72,6 +68,7 @@ dependencies {
 //    Retrofit
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.3.1")
 
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
