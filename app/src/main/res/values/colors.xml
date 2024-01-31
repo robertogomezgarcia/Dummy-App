@@ -9,5 +9,7 @@
     <color name="cian">#00BCD4</color>
     <color name="blue">#000DFF</color>
     <color name="blueLight">#267BFA</color>
+    <color name="blueUltraLight">#B8D5FF</color>
     <color name="blueDark">#000F5C</color>
+    <color name="grey_background">#EEEEEE</color>
 </resources>

@@ -1,6 +1,6 @@
 package com.example.dummyapp.data.network.response
 
-import com.example.dummyapp.domain.model.User
+import com.example.dummyapp.domain.model.login.User
 import com.google.gson.annotations.SerializedName
 
 class LoginResponse(

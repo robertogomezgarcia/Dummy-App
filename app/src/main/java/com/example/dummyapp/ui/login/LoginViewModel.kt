@@ -2,8 +2,8 @@ package com.example.dummyapp.ui.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.dummyapp.domain.model.User
-import com.example.dummyapp.domain.model.UserModel
+import com.example.dummyapp.domain.model.login.User
+import com.example.dummyapp.domain.model.login.UserModel
 import com.example.dummyapp.domain.usecase.LoginUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

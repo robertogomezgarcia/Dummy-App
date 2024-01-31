@@ -56,6 +56,7 @@ dependencies {
     val navVersion = "2.7.6"
     val daggerVersion = "2.48"
     val retrofitVersion = "2.9.0"
+    val picassoVersion = "2.71828"
 
     //    NavComponent
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
@@ -69,6 +70,9 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
     implementation("com.squareup.okhttp3:logging-interceptor:4.3.1")
+
+//    Picasso
+    implementation ("com.squareup.picasso:picasso:$picassoVersion")
 
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")

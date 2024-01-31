@@ -1,10 +1,12 @@
 package com.example.dummyapp.ui.login
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -12,7 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.dummyapp.databinding.LoginFragmentBinding
-import com.example.dummyapp.domain.model.UserModel
+import com.example.dummyapp.domain.model.login.UserModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -43,8 +45,8 @@ class LoginFragment: Fragment() {
                 loginViewModel.state.collect {
                     when(it){
                         is LoginState.Error -> Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
-                        is LoginState.Loading -> Toast.makeText(context, "Cargando", Toast.LENGTH_SHORT).show()
-                        is LoginState.Success -> findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToProductFragment())
+                        is LoginState.Loading -> Log.i("rober", "cargando")
+                        is LoginState.Success -> navigateProductFragment()
                     }
 
                 }
@@ -69,6 +71,9 @@ class LoginFragment: Fragment() {
         val passField = binding.editPass.text.toString()
         val userModel = UserModel(userField,passField)
         loginViewModel.login(userModel)
-//        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToProductFragment())
+    }
+
+    private fun navigateProductFragment(){
+        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToProductFragment())
     }
 }

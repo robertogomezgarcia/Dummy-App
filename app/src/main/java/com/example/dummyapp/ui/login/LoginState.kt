@@ -1,6 +1,6 @@
 package com.example.dummyapp.ui.login
 
-import com.example.dummyapp.domain.model.User
+import com.example.dummyapp.domain.model.login.User
 
 sealed class LoginState {
     data object Loading : LoginState()
